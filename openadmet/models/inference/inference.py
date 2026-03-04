@@ -268,7 +268,13 @@ def predict(
                     "Detected pairwise featurizer, generating pairwise output DataFrame"
                 )
                 data = _generate_pairwise_df(
-                    data, input_col, feat, predictions, predictions_tag, std_tag, task_idx=j
+                    data,
+                    input_col,
+                    feat,
+                    predictions,
+                    predictions_tag,
+                    std_tag,
+                    task_idx=j,
                 )
 
             else:

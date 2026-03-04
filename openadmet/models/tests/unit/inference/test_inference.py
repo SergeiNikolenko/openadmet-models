@@ -148,7 +148,9 @@ def test_predict_pairwise_multitask_passes_task_idx(monkeypatch):
 
     monkeypatch.setattr(inference_module, "PairwiseFeaturizer", DummyPairwiseFeaturizer)
     monkeypatch.setattr(inference_module, "load_anvil_model_and_metadata", fake_loader)
-    monkeypatch.setattr(inference_module, "_generate_pairwise_df", fake_generate_pairwise_df)
+    monkeypatch.setattr(
+        inference_module, "_generate_pairwise_df", fake_generate_pairwise_df
+    )
 
     inference_module.predict(
         input_path=pd.DataFrame({"SMILES": ["CCO"]}),
